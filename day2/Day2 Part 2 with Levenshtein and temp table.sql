@@ -1,3 +1,6 @@
+-- Used the levenshtein-algorithm from this site
+-- https://www.red-gate.com/simple-talk/blogs/string-comparisons-in-sql-edit-distance-and-the-levenshtein-algorithm/
+
 DECLARE @NumberOfBoxes int = (SELECT COUNT(Id) FROM Box);
 DECLARE @BoxIndex1 int = 1;
 DECLARE @BoxIndex2 int;
