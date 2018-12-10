@@ -300,7 +300,6 @@ DECLARE @BoxWithAlmostSameLettersId int = null;
 WHILE (@BoxIndex <= @NumberOfBoxes AND @BoxWithAlmostSameLettersId IS NULL)
 BEGIN
 	SET @Value = (SELECT BoxId FROM BOX WHERE Id = @BoxIndex);
-	--SET @ValueLength = LEN(@Value);
 	SET @ValueIndex = 1;
 
 	if EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'Temp' AND TABLE_SCHEMA = 'dbo')
