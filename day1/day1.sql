@@ -1,5 +1,3 @@
--- Pre part 1
-
 CREATE TABLE Frequency (Id INT NOT NULL IDENTITY(1,1) PRIMARY KEY, Number int)
 
 INSERT INTO Frequency (Number) 
@@ -74,11 +72,7 @@ VALUES (-15	),(-17	),(-16	),(-12	),(-4		),(+10	),(+10	),(-19	),(-18	),(-6		),(+4
 (+9		),(+10	),(+16	),(+14	),(-15	),(+10	),(-18	),(-11	),(-13	),(-11	),(-2		),(-9		),(-17	),(+11	),
 (+8		),(+125143)
 
--- Part 1
-SELECT SUM(Number) from Frequency AS AnswerPart1
 
-
--- Part 2
 CREATE TABLE Temp (Number INT PRIMARY KEY)
 INSERT INTO Temp VALUES (0)
 
@@ -94,10 +88,10 @@ BEGIN
 	INSERT INTO Temp VALUES (@Value)
 	SET @CurrentId = CASE WHEN (@CurrentId + 1) > @Max THEN 1 ELSE (@CurrentId + 1) END;
 END
-SELECT @Value AS AnswerPart2
+
+SELECT SUM(Number) AS AnswerPart1, @Value AS AnswerPart2 from Frequency 
 
 DROP TABLE Temp
-
 Drop TABLE Frequency
 
 
